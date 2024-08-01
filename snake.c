@@ -145,6 +145,8 @@ void titleScreen(SDL_Window *window, SDL_Surface *windowSurface, SDL_Surface *lo
 
         if(introAnimation > 70) {
             gameStarted = true;
+            SDL_FreeSurface(logo);
+            SDL_FreeSurface(controls);
         }
     } else {
         SDL_SetSurfaceAlphaMod(controls, (sin(SDL_GetTicks() * 0.005) + 1) * 50 + 155);
